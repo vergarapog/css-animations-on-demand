@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animations on Demand</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,800;1,200;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/7dabdac481.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">A</div>
+      <div class="left">
+        <ul class="nav-list">
+          <li class="nav-list-item first">Basic</li>
+          <li class="nav-list-item">Entrances</li>
+          <li class="nav-list-item">Exits</li>
+          <li class="nav-list-item">Text</li>
+          <li class="nav-list-item">Attention</li>
+          <li class="nav-list-item">Background</li>
+        </ul>
+      </div>
+      <div class="right"></div>
+    </nav>
+
+    <section class="main-menu">
+      <div class="upper">
+        <div class="animation-group">Animation Group</div>
+        <div class="animation-group">Animation Group</div>
+        <div class="animation-group">Animation Group</div>
+        <div class="animation-group">Animation Group</div>
+        <div class="animation-group">Animation Group</div>
+        <div class="animation-group">Animation Group</div>
+        <div class="animation-group">Animation Group</div>
+        <div class="animation-group">Animation Group</div>
+        <div class="animation-group">Animation Group</div>
+      </div>
+      <div class="lower">
+        <div class="variation">variations</div>
+        <div class="variation">variations</div>
+        <div class="variation">variations</div>
+        <div class="variation">variations</div>
+        <div class="variation">variations</div>
+        <div class="variation">variations</div>
+        <div class="variation">variations</div>
+        <div class="variation">variations</div>
+        <div class="variation">variations</div>
+        <div class="variation">variations</div>
+        <div class="variation">variations</div>
+      </div>
+    </section>
+
+    <main>
+      <aside>Options</aside>
+      <div class="toggle-menus">
+        <div class="toggle-menu-item"><i class="fas fa-reply-all"></i></div>
+        <div class="toggle-menu-item"><i class="fas fa-heart"></i></div>
+        <div class="toggle-menu-item">{code}</div>
+      </div>
+
+      <div class="box"></div>
+    </main>
+
+    <!-- <div class="intro">
+      <div class="heading">
+        <h2>
+          <span id="create">CSS</span>
+        </h2>
+        <h2>
+          <span id="create">Animations</span>
+        </h2>
+        <h2>
+          <span id="create">on demand.</span>
+        </h2>
+      </div>
+    </div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/EasePack.min.js"></script>
+
+    <script>
+      let t1 = gsap.timeline({ defaults: { ease: "SlowMo.easeOut" } })
+
+      t1.to("#create", { y: "0%", duration: 0.7, stagger: 0.3 })
+      t1.to(".intro", { y: "-100%", duration: 0.8, delay: 0.6 })
+      //   t1.fromTo("h1", { opacity: 0 }, { opacity: 1, delay: 0.5 })
+    </script>
+  </body>
+</html>
