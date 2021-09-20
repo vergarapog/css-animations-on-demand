@@ -15,11 +15,12 @@ nav {
   width: 100%;
   height: 7vh;
   display: flex;
+
   align-items: center;
   padding: 0 0.5em;
 
   .logo {
-    margin-right: 0.5em;
+    margin-right: 0.7em;
   }
 
   .left {
@@ -28,7 +29,8 @@ nav {
       text-transform: uppercase;
       font-size: 1rem;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: flex-start;
+
       list-style: none;
     }
 
@@ -37,6 +39,7 @@ nav {
       cursor: pointer;
 
       padding: 0.5em;
+      margin-right: 0.5em;
       border-radius: 8px;
 
       &:hover {
@@ -56,6 +59,7 @@ nav {
 .main-menu {
   background-color: $white;
   height: 28vh;
+
   .upper {
     height: 60%;
     padding: 0 1em;
@@ -63,9 +67,23 @@ nav {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: initial;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    counter-reset: ctr;
 
     .animation-group {
+      &::after {
+        counter-increment: ctr;
+        content: counter(ctr);
+      }
+
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -74,8 +92,9 @@ nav {
       font-weight: 600;
 
       color: whitesmoke;
-
       width: 120px;
+      min-width: 120px;
+
       height: 120px;
       border-radius: 50%;
       background-color: $dark;
@@ -92,7 +111,7 @@ nav {
   }
   .lower {
     height: 40%;
-    padding: 0.2em 1em;
+    padding: 1em 1em;
     display: flex;
     flex-wrap: wrap;
 
@@ -144,7 +163,7 @@ main {
     position: absolute;
 
     top: 4%;
-    right: 4%;
+    right: 3%;
     width: 220px;
     height: 50px;
 
