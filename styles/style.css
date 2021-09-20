@@ -6,13 +6,17 @@
   font-family: Montserrat;
 }
 
-nav {
+.wrapper {
+  height: 100vh;
+}
+
+.wrapper nav {
   background-color: #3e3e3e;
   color: #ffffff;
   font-size: 2rem;
   font-weight: 600;
   width: 100%;
-  height: 7vh;
+  min-height: 7vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,15 +26,15 @@ nav {
   padding: 0 0.5em;
 }
 
-nav .logo {
+.wrapper nav .logo {
   margin-right: 0.7em;
 }
 
-nav .left {
+.wrapper nav .left {
   width: 45%;
 }
 
-nav .left .nav-list {
+.wrapper nav .left .nav-list {
   text-transform: uppercase;
   font-size: 1rem;
   display: -webkit-box;
@@ -42,7 +46,7 @@ nav .left .nav-list {
   list-style: none;
 }
 
-nav .left .nav-list-item {
+.wrapper nav .left .nav-list-item {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   cursor: pointer;
@@ -51,26 +55,27 @@ nav .left .nav-list-item {
   border-radius: 8px;
 }
 
-nav .left .nav-list-item:hover {
+.wrapper nav .left .nav-list-item:hover {
   background-color: #ff6060;
 }
 
-nav .left .nav-list-item:nth-child(1) {
+.wrapper nav .left .nav-list-item:nth-child(1) {
   background-color: #ff6060;
 }
 
-nav .right {
+.wrapper nav .right {
   width: 55%;
 }
 
-.main-menu {
+.wrapper .main-menu {
   background-color: #ffffff;
+  min-height: 250px;
   height: 28vh;
 }
 
-.main-menu .upper {
+.wrapper .main-menu .upper {
   height: 60%;
-  padding: 0 1em;
+  padding: 1em 1em 0.5em 1em;
   border-bottom: solid 1px lightgray;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,11 +91,11 @@ nav .right {
   counter-reset: ctr;
 }
 
-.main-menu .upper::-webkit-scrollbar {
+.wrapper .main-menu .upper::-webkit-scrollbar {
   width: 0;
 }
 
-.main-menu .upper .animation-group {
+.wrapper .main-menu .upper .animation-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,20 +122,21 @@ nav .right {
   transition: all 0.5s ease;
 }
 
-.main-menu .upper .animation-group::after {
+.wrapper .main-menu .upper .animation-group::after {
   counter-increment: ctr;
   content: counter(ctr);
 }
 
-.main-menu .upper .animation-group:hover {
+.wrapper .main-menu .upper .animation-group:hover {
   background-color: #ff6060;
 }
 
-.main-menu .upper .animation-group:nth-child(1) {
+.wrapper .main-menu .upper .animation-group:nth-child(1) {
   background-color: #ff6060;
 }
 
-.main-menu .lower {
+.wrapper .main-menu .lower {
+  min-height: 50px;
   height: 40%;
   padding: 1em 1em;
   display: -webkit-box;
@@ -140,7 +146,7 @@ nav .right {
       flex-wrap: wrap;
 }
 
-.main-menu .lower .variation {
+.wrapper .main-menu .lower .variation {
   width: 10em;
   height: 2em;
   display: -webkit-box;
@@ -158,22 +164,22 @@ nav .right {
   transition: all 0.4s ease;
 }
 
-.main-menu .lower .variation:hover {
+.wrapper .main-menu .lower .variation:hover {
   background-color: #ff6060;
 }
 
-.main-menu .lower .variation:nth-child(1) {
+.wrapper .main-menu .lower .variation:nth-child(1) {
   background-color: #ff6060;
 }
 
-main {
+.wrapper main {
   width: 100vw;
   height: 65vh;
   background-color: #dfdfdf;
   position: relative;
 }
 
-main aside {
+.wrapper main aside {
   position: absolute;
   top: 4%;
   left: 2%;
@@ -184,7 +190,7 @@ main aside {
   font-weight: 500;
 }
 
-main .toggle-menus {
+.wrapper main .toggle-menus {
   position: absolute;
   top: 4%;
   right: 3%;
@@ -200,7 +206,7 @@ main .toggle-menus {
           align-items: center;
 }
 
-main .toggle-menus .toggle-menu-item {
+.wrapper main .toggle-menus .toggle-menu-item {
   font-size: 1.1rem;
   padding: 0.7em;
   border-radius: 10px;
@@ -212,11 +218,11 @@ main .toggle-menus .toggle-menu-item {
   transition: all 0.5s ease;
 }
 
-main .toggle-menus .toggle-menu-item:hover {
+.wrapper main .toggle-menus .toggle-menu-item:hover {
   background-color: #ff6060;
 }
 
-main .box {
+.wrapper main .box {
   position: absolute;
   background-color: #3e3e3e;
   width: 200px;
@@ -225,7 +231,7 @@ main .box {
   right: 35%;
 }
 
-h1 {
+.wrapper h1 {
   font-size: 4rem;
   text-transform: uppercase;
   font-weight: 200;
