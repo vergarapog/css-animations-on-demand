@@ -24,6 +24,13 @@
     align-items: center;
     padding: 0 0.5em;
 
+    @include mobile {
+      height: 10%;
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
     .logo {
       margin-right: 0.7em;
     }
@@ -61,6 +68,10 @@
     .right {
       width: auto;
 
+      @include mobile {
+        align-self: flex-end;
+      }
+
       .hamburger {
         scrollbar-width: none; /// hide scrollbar for firefox
         &::-webkit-scrollbar {
@@ -69,6 +80,11 @@
         }
         width: 1.1em;
         height: 0.7em;
+
+        @include mobile {
+          width: 0.8em;
+          height: 0.5em;
+        }
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -172,6 +188,10 @@
         width: 0;
       }
 
+      @include mobile {
+        height: 30%;
+      }
+
       counter-reset: ctr;
 
       .animation-group {
@@ -197,6 +217,14 @@
         border-radius: 50%;
         background-color: $dark;
 
+        @include mobile {
+          padding: 0.5em 0.5em;
+          height: 40px;
+          width: 40px;
+          border-radius: 10px;
+          font-size: 0.6em;
+        }
+
         transition: all 0.5s ease;
 
         &:hover {
@@ -218,6 +246,11 @@
       display: grid;
       gap: 1rem;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+      @include mobile {
+        grid-row: 1;
+        height: 5%;
+      }
 
       .variation {
         width: 8em;
@@ -261,6 +294,10 @@
       padding: 2em;
 
       font-weight: 500;
+
+      @include mobile {
+        display: none;
+      }
     }
 
     .toggle-menus {
@@ -270,6 +307,11 @@
       right: 3%;
       width: 220px;
       height: 50px;
+
+      @include mobile {
+        width: 150px;
+        height: 40px;
+      }
 
       display: flex;
       justify-content: space-around;
@@ -281,6 +323,10 @@
         border-radius: 10px;
         background-color: $white;
         width: max-content;
+
+        @include mobile {
+          font-size: 0.8rem;
+        }
 
         transition: all 0.5s ease;
 
@@ -298,6 +344,13 @@
 
       top: 35%;
       right: 35%;
+
+      @include mobile {
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
 
@@ -325,6 +378,10 @@
     color: whitesmoke;
     text-transform: capitalize;
     font-size: 3rem;
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
 
     h2 {
       // background-color: #111;
