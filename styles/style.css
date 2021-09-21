@@ -8,7 +8,7 @@
 
 .wrapper {
   height: 100vh;
-  width: 100vw;
+  overflow-x: hidden;
 }
 
 .wrapper nav {
@@ -17,10 +17,14 @@
   font-size: 2rem;
   font-weight: 600;
   width: 100%;
-  min-height: 7vh;
+  height: 5%;
+  min-height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -32,12 +36,18 @@
 }
 
 .wrapper nav .left {
-  width: 45%;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .wrapper nav .left .nav-list {
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,13 +75,125 @@
 }
 
 .wrapper nav .right {
-  width: 55%;
+  width: auto;
+}
+
+.wrapper nav .right .hamburger {
+  scrollbar-width: none;
+  width: 1.1em;
+  height: 0.7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+.wrapper nav .right .hamburger::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper nav .right .hamburger span {
+  width: 100%;
+  height: 0.08em;
+  background-color: #ffffff;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.wrapper nav .right.active .hamburger {
+  scrollbar-width: none;
+}
+
+.wrapper nav .right.active .hamburger::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper nav .right.active .hamburger span:first-child {
+  background-color: white;
+  -webkit-transform: rotate(44deg);
+          transform: rotate(44deg);
+}
+
+.wrapper nav .right.active .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.wrapper nav .right.active .hamburger span:last-child {
+  background-color: white;
+  -webkit-transform: rotate(-44deg);
+          transform: rotate(-44deg);
+}
+
+.wrapper .menu {
+  width: 20em;
+  height: 100vh;
+  background-color: #3e3e3e;
+  position: fixed;
+  top: 5%;
+  right: -20em;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: center;
+          flex-direction: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.wrapper .menu.active {
+  right: 0;
+}
+
+.wrapper .menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.8rem;
+  color: #3e3e3e;
+  font-weight: 300;
+  text-align: center;
+  width: 80%;
+}
+
+.wrapper .menu ul li {
+  margin: 0 0 1.5em 0;
+}
+
+.wrapper .menu ul li a {
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.wrapper .menu ul li:hover {
+  font-weight: 500;
 }
 
 .wrapper .main-menu {
   background-color: #ffffff;
   min-height: 250px;
-  height: 28vh;
+  height: 25%;
 }
 
 .wrapper .main-menu .upper {
@@ -140,15 +262,15 @@
   min-height: 50px;
   height: 40%;
   padding: 1em 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 .wrapper .main-menu .lower .variation {
-  width: 10em;
+  width: 8em;
   height: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,7 +297,7 @@
 
 .wrapper main {
   width: 100vw;
-  height: 65vh;
+  height: 70%;
   background-color: #dfdfdf;
   position: relative;
 }

@@ -18,10 +18,11 @@
     ></script>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" id="app">
       <nav>
-        <div class="logo">A</div>
+       
         <div class="left">
+          <div class="logo">A</div>
           <ul class="nav-list">
             <li class="nav-list-item first">Basic</li>
             <li class="nav-list-item">Entrances</li>
@@ -31,8 +32,35 @@
             <li class="nav-list-item">Background</li>
           </ul>
         </div>
-        <div class="right"></div>
+        <div class="right" v-bind:class="{ active: isNavMenuVisible }" >
+          <div class="hamburger" @click="toggleNavMenu" >
+          <span class="line1"></span>
+          <span class="line2"></span>
+          <span class="line3"></span>
+        </div>
       </nav>
+
+      <div class="menu" v-bind:class="{ active: isNavMenuVisible }" >
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li >
+          <a href="#">About</a>
+        </li>
+        <li >
+          <a href="#">How to</a>
+        </li>
+        <li >
+          <a href="#">Contact</a>
+        </li>
+        <!-- <li >
+          <a href="https://github.com/vergarapog/myPortofolio" target="_blank">
+            My Website's Code
+          </a>
+        </li> -->
+      </ul>
+    </div>
 
       <section class="main-menu">
         <div class="upper">
@@ -55,6 +83,10 @@
           <div class="animation-group">Animation Group</div>
         </div>
         <div class="lower">
+          <div class="variation">variations</div>
+          <div class="variation">variations</div>
+          <div class="variation">variations</div>
+          <div class="variation">variations</div>
           <div class="variation">variations</div>
           <div class="variation">variations</div>
           <div class="variation">variations</div>
@@ -113,5 +145,27 @@
         scrollContainer.scrollLeft += evt.deltaY
       })
     </script>
+
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <script>
+       let app = Vue.createApp({
+        data: function () {
+          return {
+            greetings: "hotdog",
+            isNavMenuVisible: false,
+          }
+        },
+        methods: {
+          toggleNavMenu() {
+            this.isNavMenuVisible = !this.isNavMenuVisible
+          },
+         
+        },
+       
+      })
+       app.mount("#app")
+    </script>
+    
   </body>
 </html>
